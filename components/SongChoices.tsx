@@ -46,6 +46,18 @@ export const ArianaSongs = (props:Props) => {
 export const TaylorSongs = (props:Props) => {
     const [firstLine, setFirstLine] = useState('Choose an Artist to display a first line')
     const [song, Setsong] = useState('');
+    const handleChange = (itemValue: string) => {
+        Setsong(itemValue)
+        if (itemValue === 'love') {
+            setFirstLine(taylor.firstLyrics[0])
+        } else if (itemValue === 'bad') {
+            setFirstLine(taylor.firstLyrics[1])
+        } else if (itemValue === 'enchanted') {
+            setFirstLine(taylor.firstLyrics[0])
+        } else {
+            setFirstLine('Choose an Song to display a first line')
+        } 
+    }
     if (props.hide === false) {
         return null;
     }
@@ -54,7 +66,7 @@ export const TaylorSongs = (props:Props) => {
          <Picker
             selectedValue={song}
             onValueChange={(itemValue, itemIndex) =>
-                Setsong(itemValue)
+                handleChange(itemValue)
             }>
             <Picker.Item label="Pick A Song:" value="default"  />
             <Picker.Item label="Love Story" value="love" />
