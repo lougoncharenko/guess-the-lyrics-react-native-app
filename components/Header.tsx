@@ -1,16 +1,22 @@
 import React, {useState} from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
+import { ariana, taylor } from './ArtistInformation';
 
 export const Header = () => {
     const [artistImage, setImage] = useState('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs5snERfT36_-ejP2Knz3U1AeYIavkIqG3mSb0paHULk1sLAn62DWcBr0tCIsh0D4UQmM&usqp=CAU')
     const [artist, setArtist] = useState<string>('')
-    if (artist ==='ariana'){
-        alert('ariana')
-    } else if (artist === 'taylor'){
-        alert('taylor')
-    } else {
-        console.log('hello')
+    const changeImage = (itemValue:string) => {
+        setArtist(itemValue)
+        if (itemValue ==='ariana'){
+            // alert('ariana')
+            setImage(ariana.images[0])
+        } else if (itemValue === 'taylor'){
+            // alert('taylor')
+            setImage(taylor.images[0])
+        } else if (itemValue === 'default') {
+            setImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs5snERfT36_-ejP2Knz3U1AeYIavkIqG3mSb0paHULk1sLAn62DWcBr0tCIsh0D4UQmM&usqp=CAU')
+        }
     }
     return (
       <View>
@@ -25,9 +31,9 @@ export const Header = () => {
          <Picker
             selectedValue={artist}
             onValueChange={(itemValue, itemIndex) =>
-            setArtist(itemValue)
+            changeImage(itemValue)
             }>
-            <Picker.Item label="Pick An Artist:" value="default" />
+            <Picker.Item label="Pick An Artist:" value="default"  />
             <Picker.Item label="Ariana Grande" value="ariana" />
             <Picker.Item label="Taylor Swift" value="taylor" />
         </Picker>
