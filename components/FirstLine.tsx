@@ -1,11 +1,15 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
-const FirstLine = () => {
+interface Props {
+    text: string
+}
+
+const FirstLine = (props:Props) => {
   return (
       <View style= {styles.fieldset}> 
         <Text>
-
+            {props.text}
         </Text> 
       </View>
     
