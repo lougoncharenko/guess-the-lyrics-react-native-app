@@ -3,10 +3,13 @@ import { View, Text, Image, StyleSheet } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 import { ariana, taylor } from './ArtistInformation';
 import FirstLine from './FirstLine';
+import { ArianaSongs, TaylorSongs } from './SongChoices';
 
 export const Header = () => {
     const [artistImage, setImage] = useState('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs5snERfT36_-ejP2Knz3U1AeYIavkIqG3mSb0paHULk1sLAn62DWcBr0tCIsh0D4UQmM&usqp=CAU')
     const [artist, setArtist] = useState<string>('')
+    const [arianaVisibility, setArianaVisibility] = useState<boolean>(false)
+    const [taylorVisibility, setTaylorVisibility] = useState<boolean>(false)
     const changeImage = (itemValue:string) => {
         setArtist(itemValue)
         if (itemValue ==='ariana'){
