@@ -3,9 +3,16 @@ import { View, Text, Image, StyleSheet } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 import FirstLine from './FirstLine';
 
-export const ArianaSongs = () => {
+interface Props {
+    hide: boolean
+}
+
+export const ArianaSongs = (props:Props) => {
     const [firstLine, setFirstLine] = useState('Choose an Artist to display a first line')
     const [song, Setsong] = useState('');
+    if (props.hide) {
+        return null;
+    }
     return(
         <View>
          <Picker
@@ -23,9 +30,12 @@ export const ArianaSongs = () => {
     )
 }
 
-export const TaylorSongs = () => {
+export const TaylorSongs = (props:Props) => {
     const [firstLine, setFirstLine] = useState('Choose an Artist to display a first line')
     const [song, Setsong] = useState('');
+    if (props.hide) {
+        return null;
+    }
     return(
         <View>
          <Picker
