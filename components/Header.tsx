@@ -16,18 +16,18 @@ const Header = () => {
   );
 }
 
-const ArtistChoice = () => {
+export const ArtistChoice = () => {
     const [artist, setArtist] = useState<string>('')
     return (
       <View>
-         <Text>Select an Artist</Text>
+          <Text style= {styles.artistText}>Select an Artist:</Text>
          <Picker
             selectedValue={artist}
             onValueChange={(itemValue, itemIndex) =>
-                setArtist(itemValue)
+            setArtist(itemValue)
             }>
-            <Picker.Item label="Java" value="java" />
-            <Picker.Item label="JavaScript" value="js" />
+            <Picker.Item label="Ariana Grande" value="ariana" />
+            <Picker.Item label="Taylor Swift" value="taylor" />
         </Picker>
      
       </View>
@@ -55,6 +55,11 @@ const styles = StyleSheet.create( {
         height: 50, 
         width: 150,
     },
+    artistText: {
+        textAlign: 'center',
+        paddingTop: 40,
+        fontSize: 20,
+    }
 })
 
 export default Header;
