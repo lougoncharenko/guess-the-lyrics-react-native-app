@@ -1,19 +1,9 @@
 import React, {useState} from 'react';
-import { View, Text, Image, StyleSheet, } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 
-const ArtistChoice = () => {
-    const [image, setImage] = useState('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs5snERfT36_-ejP2Knz3U1AeYIavkIqG3mSb0paHULk1sLAn62DWcBr0tCIsh0D4UQmM&usqp=CAU')
-    const [artist, setArtist] = useState<string>('')
-    return (
-    <View style={styles.container}>
-
-    </View>
-  );
-}
-
 export const Header = () => {
-    const [image, setImage] = useState<any>('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs5snERfT36_-ejP2Knz3U1AeYIavkIqG3mSb0paHULk1sLAn62DWcBr0tCIsh0D4UQmM&usqp=CAU')
+    const [artistImage, setImage] = useState('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs5snERfT36_-ejP2Knz3U1AeYIavkIqG3mSb0paHULk1sLAn62DWcBr0tCIsh0D4UQmM&usqp=CAU')
     const [artist, setArtist] = useState<string>('')
     if (artist ==='ariana'){
         alert('ariana')
@@ -28,8 +18,7 @@ export const Header = () => {
           <Text style = {styles.heading}> Guess The Lyrics</Text>
              <Image 
                 style = {styles.image}
-                source = { {image}
-                }
+                source = { {uri: artistImage }}
              /> 
           </View>
         
