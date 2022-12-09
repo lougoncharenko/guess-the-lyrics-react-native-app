@@ -1,5 +1,6 @@
-import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import React, {useState} from 'react';
+import { View, Text, Image, StyleSheet, } from 'react-native';
+import {Picker} from '@react-native-picker/picker';
 
 const Header = () => {
   return (
@@ -15,6 +16,26 @@ const Header = () => {
   );
 }
 
+const ArtistChoice = () => {
+    const [artist, setArtist] = useState<string>('')
+    return (
+      <View>
+         <Text>Select an Artist</Text>
+         <Picker
+            selectedValue={artist}
+            onValueChange={(itemValue, itemIndex) =>
+                setArtist(itemValue)
+            }>
+            <Picker.Item label="Java" value="java" />
+            <Picker.Item label="JavaScript" value="js" />
+        </Picker>
+     
+      </View>
+    
+  
+    )
+  }
+
 const styles = StyleSheet.create( {
     container: {
         alignItems: 'center'
@@ -29,7 +50,11 @@ const styles = StyleSheet.create( {
     image: {
         width:  300,
         height: 400,
-    }
+    },
+    picker: { 
+        height: 50, 
+        width: 150,
+    },
 })
 
 export default Header;
