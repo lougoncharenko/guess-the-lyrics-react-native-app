@@ -14,9 +14,13 @@ export const Header = () => {
         if (itemValue ==='ariana'){
             // alert('ariana')
             setImage(ariana.images[0])
+            setArianaVisibility(true)
+            setTaylorVisibility(false)
         } else if (itemValue === 'taylor'){
             // alert('taylor')
             setImage(taylor.images[0])
+            setTaylorVisibility(true)
+            setArianaVisibility(false)
         } else if (itemValue === 'default') {
             setImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs5snERfT36_-ejP2Knz3U1AeYIavkIqG3mSb0paHULk1sLAn62DWcBr0tCIsh0D4UQmM&usqp=CAU')
         }
