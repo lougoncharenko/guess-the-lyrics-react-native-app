@@ -14,16 +14,18 @@ const GuessingForm = (props:Props) => {
   return (
     <View style={styles.container}>
         <View style={styles.fieldset}>
-            <Text> Guess the Next Line: </Text>
-            <TextInput
-            style={styles.input}
-            onChangeText={setSecondGuess}
-            value={secondGuess} 
-            placeholder = 'Enter your guess here'
-            />
-            <Pressable>
-                <Text>Submit</Text>
-            </Pressable>
+            <Text style={styles.textGuess}> Guess the Next Line: </Text>
+            <View style={styles.inputContainer}>
+                <TextInput
+                style={styles.input}
+                onChangeText={setSecondGuess}
+                value={secondGuess} 
+                placeholder = 'Enter your guess here'
+                />
+                <Pressable style={styles.button}>
+                    <Text>Submit</Text>
+                </Pressable>
+            </View>
         </View>
     </View>
   );
@@ -34,11 +36,25 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingBottom: 80,
     },
+    textGuess: {
+        textAlign: 'center',
+        fontWeight: 'bold'
+    },
+    inputContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
     input: {
       height: 40,
       margin: 12,
       borderWidth: 1,
       padding: 10,
+    },
+    button: {
+        backgroundColor: 'green',
+        padding: 5,
+        borderRadius: 90
     },
     fieldset: {
         padding: 10,
