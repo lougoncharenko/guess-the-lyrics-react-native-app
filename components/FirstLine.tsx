@@ -10,7 +10,7 @@ const FirstLine = (props:Props) => {
       <View style={styles.container}>
         <View style= {styles.fieldset}> 
             <Text style={styles.firstLine}>
-                {props.text}
+                First line is {props.text}
             </Text> 
         </View>
       </View>
