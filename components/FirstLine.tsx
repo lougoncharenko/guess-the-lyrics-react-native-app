@@ -22,6 +22,7 @@ const FirstLine = (props:Props) => {
 const styles= StyleSheet.create({
     container: {
         alignItems: 'center',
+        paddingBottom: 80,
     },
     fieldset: {
         padding: 10,
@@ -29,7 +30,7 @@ const styles= StyleSheet.create({
         borderWidth: 5,
         borderStyle: 'solid',
         justifyContent: 'center',
-        width: '80%'
+        width: '80%',
     },
     firstLine: {
         flexDirection: 'row',
