@@ -7,7 +7,6 @@ import FirstLine from './FirstLine';
 export const Header = () => {
     const [artistImage, setImage] = useState('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs5snERfT36_-ejP2Knz3U1AeYIavkIqG3mSb0paHULk1sLAn62DWcBr0tCIsh0D4UQmM&usqp=CAU')
     const [artist, setArtist] = useState<string>('')
-    const [firstLine, setFirstLine] = useState('Choose an Artist to display a first line')
     const changeImage = (itemValue:string) => {
         setArtist(itemValue)
         if (itemValue ==='ariana'){
@@ -39,8 +38,6 @@ export const Header = () => {
             <Picker.Item label="Ariana Grande" value="ariana" />
             <Picker.Item label="Taylor Swift" value="taylor" />
         </Picker>
-            <FirstLine text={firstLine}/>
-
       </View>
     )
   }
