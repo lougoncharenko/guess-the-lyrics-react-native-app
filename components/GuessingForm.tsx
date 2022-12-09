@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { View, TextInput, Pressable, Text, StyleSheet} from 'react-native';
 
 interface Props {
@@ -6,11 +6,20 @@ interface Props {
 }
 
 
-const GuessingForm = () => {
+const GuessingForm = (props:Props) => {
+  const [secondGuess, setSecondGuess] = useState('')
+  if (props.hide === false) {
+    return null;
+  }
   return (
     <View>
         <Text> Guess the Next Line: </Text>
-        <TextInput></TextInput>
+        <TextInput
+          style={styles.input}
+          onChangeText={setSecondGuess}
+          value={secondGuess} 
+          placeholder = 'Enter your guess here'
+        />
         <Pressable>
             <Text>Submit</Text>
         </Pressable>
