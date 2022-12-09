@@ -3,6 +3,7 @@ import { View, Text, Image, StyleSheet } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 import { ariana, taylor } from './ArtistInformation';
 import FirstLine from './FirstLine';
+import GuessingForm from './GuessingForm';
 
 interface Props {
     hide: boolean
@@ -11,6 +12,7 @@ interface Props {
 export const ArianaSongs = (props:Props) => {
     const [firstLine, setFirstLine] = useState('Choose an Song to display a first line')
     const [song, Setsong] = useState('');
+    const [guessFormVisibility, setGuessFormVisibility] = useState<boolean>(false)
     const handleChange = (itemValue: string) => {
         Setsong(itemValue)
         if (itemValue === 'side') {
@@ -22,6 +24,7 @@ export const ArianaSongs = (props:Props) => {
         } else {
             setFirstLine('Choose an Song to display a first line')
         } 
+        setGuessFormVisibility(true)
     }
     if (props.hide === false) {
         return null;
@@ -39,6 +42,7 @@ export const ArianaSongs = (props:Props) => {
             <Picker.Item label="NASA" value="nasa" />
          </Picker>
          <FirstLine text={firstLine}/>
+         <GuessingForm hide={guessFormVisibility} />
         </View>
     )
 }
@@ -46,6 +50,7 @@ export const ArianaSongs = (props:Props) => {
 export const TaylorSongs = (props:Props) => {
     const [firstLine, setFirstLine] = useState('Choose an Artist to display a first line')
     const [song, Setsong] = useState('');
+    const [guessFormVisibility, setGuessFormVisibility] = useState<boolean>(false)
     const handleChange = (itemValue: string) => {
         Setsong(itemValue)
         if (itemValue === 'love') {
@@ -57,6 +62,7 @@ export const TaylorSongs = (props:Props) => {
         } else {
             setFirstLine('Choose an Song to display a first line')
         } 
+        setGuessFormVisibility(true)
     }
     if (props.hide === false) {
         return null;
@@ -74,6 +80,7 @@ export const TaylorSongs = (props:Props) => {
             <Picker.Item label="Enchanted" value="enchanted" />
          </Picker>
          <FirstLine text={firstLine}/>
+         <GuessingForm hide={guessFormVisibility} />
         </View>
     )
 }
