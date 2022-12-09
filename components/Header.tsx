@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 import { ariana, taylor } from './ArtistInformation';
-import FirstLine from './FirstLine';
 import { ArianaSongs, TaylorSongs } from './SongChoices';
 
 export const Header = () => {
@@ -41,6 +40,8 @@ export const Header = () => {
             <Picker.Item label="Ariana Grande" value="ariana" />
             <Picker.Item label="Taylor Swift" value="taylor" />
         </Picker>
+        <ArianaSongs hide={arianaVisibility}/>
+        <TaylorSongs hide={taylorVisibility} />
       </View>
     )
   }
