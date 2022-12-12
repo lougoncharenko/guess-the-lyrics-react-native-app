@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { View, TextInput, Pressable, Text, StyleSheet} from 'react-native';
+import Results from './Results'
 
 interface Props {
     hide: boolean;
@@ -12,6 +13,7 @@ const GuessingForm = (props:Props) => {
   const [resultsVisibility, setResultsVisibility] = useState<boolean>(false);
   const handleClick = () => {
     console.log(secondGuess)
+    setResultsVisibility(true);
   }
   if (props.hide === false) {
     return null;
@@ -34,6 +36,7 @@ const GuessingForm = (props:Props) => {
                 </Pressable>
             </View>
         </View>
+        <Results hide = {setResultsVisibility} results = {secondGuess} />
     </View>
   );
 }

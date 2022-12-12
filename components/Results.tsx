@@ -7,6 +7,9 @@ interface Props {
 }
 
 const Results = (props:Props) => {
+  if (props.hide === false) {
+        return null;
+  }
   return (
     <View style={styles.container}>
     <View style= {styles.fieldset}> 
