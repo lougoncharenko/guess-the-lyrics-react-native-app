@@ -2,7 +2,8 @@ import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 
 interface Props {
-    results: string
+    hide: boolean;
+    results: string;
 }
 
 const Results = (props:Props) => {
