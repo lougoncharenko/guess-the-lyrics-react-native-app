@@ -27,6 +27,7 @@ const Results = (props:Props) => {
 
 const styles= StyleSheet.create({
 container: {
+    margin: 30,
     alignItems: 'center',
     paddingBottom: 80,
 },
