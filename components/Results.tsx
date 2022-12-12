@@ -3,10 +3,13 @@ import { View, Text, StyleSheet } from 'react-native'
 
 interface Props {
     hide: boolean;
-    results: string;
+    guess: string;
 }
 
 const Results = (props:Props) => {
+  const compareGuessToSecondLines = () => {
+
+  }
   if (props.hide === false) {
         return null;
   }
@@ -15,7 +18,7 @@ const Results = (props:Props) => {
     <View style= {styles.fieldset}> 
         <Text style  = {styles.heading}>Results:</Text>
         <Text style={styles.results}>
-            {props.results}
+            
         </Text> 
     </View>
   </View>
