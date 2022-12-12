@@ -8,7 +8,8 @@ interface Props {
 
 
 const GuessingForm = (props:Props) => {
-  const [secondGuess, setSecondGuess] = useState('')
+  const [secondGuess, setSecondGuess] = useState('');
+  const [resultsVisibility, setResultsVisibility] = useState<boolean>(false);
   const handleClick = () => {
     console.log(secondGuess)
   }
