@@ -1,10 +1,14 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-const Results = () => {
+interface Props {
+    results: string
+}
+
+const Results = (props:Props) => {
   return (
     <View>
-        <Text></Text>
+        <Text> {props.results} </Text>
     </View>
   )
 }
