@@ -1,13 +1,16 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
+import {ariana, taylor} from './ArtistInformation'
 
 interface Props {
     hide: boolean;
     guess: string;
+    song: string;
 }
 
 const Results = (props:Props) => {
-  const compareGuessToSecondLines = () => {
+  const guess = props.guess
+  const compareGuessToSecondLines = (guess: string) => {
 
   }
   if (props.hide === false) {
