@@ -4,19 +4,10 @@ import {ariana, taylor} from './ArtistInformation'
 
 interface Props {
     hide: boolean;
-    guess: string;
-    song: string;
+    result: string
 }
 
 const Results = (props:Props) => {
-  const [results, setResults] = useState<string>('')
-  const guess = props.guess
-  const song = props.song
-  const correctAnswer = 'Good job! You guessed the lyrcis correct!'
-  const compareGuessToSecondLines = (guess: string, song: string) => {
-    if ((song) === 'side' && guess === ariana.secondLyrics[0]) 
-        setResults(correctAnswer)
-  }
   if (props.hide === false) {
         return null;
   }
@@ -25,7 +16,7 @@ const Results = (props:Props) => {
     <View style= {styles.fieldset}> 
         <Text style  = {styles.heading}>Results:</Text>
         <Text style={styles.results}>
-            
+            {props.result}
         </Text> 
     </View>
   </View>

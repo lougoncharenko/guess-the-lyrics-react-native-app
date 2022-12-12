@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { View, TextInput, Pressable, Text, StyleSheet} from 'react-native';
 import Results from './Results'
+import {ariana, taylor} from './ArtistInformation'
 
 interface Props {
     hide: boolean;
@@ -11,6 +12,25 @@ interface Props {
 const GuessingForm = (props:Props) => {
   const [secondGuess, setSecondGuess] = useState('');
   const [resultsVisibility, setResultsVisibility] = useState<boolean>(false);
+  const [results, setResults] = useState<string>('')
+  const correctAnswer = 'Good job! You guessed the lyrcis correct!'
+  const compareGuessToSecondLines = (guess: string, song: string) => {
+  if (song === 'side' && guess === ariana.secondLyrics[0]){
+    setResults(correctAnswer);
+  } else if (song ===  'seven' && guess === ariana.secondLyrics[1] ) {
+    setResults(correctAnswer);
+  } else if (song === 'nasa' && guess === ariana.secondLyrics[2]) {
+    setResults(correctAnswer);
+  } else if (song === 'love' && guess === taylor.secondLyrics[0]) {
+    setResults(correctAnswer);
+  } else if (song === 'bad' && guess === taylor.secondLyrics[1]) {
+    setResults(correctAnswer);
+  } else if (song === 'enchanted' && guess === taylor.secondLyrics[2]) {
+    setResults(correctAnswer);
+  } else {
+    setResults(`Whoops try again! ${guess} is not the crrect answer`)
+  }
+  } 
   const handleClick = () => {
     console.log(secondGuess)
     setResultsVisibility(true);
