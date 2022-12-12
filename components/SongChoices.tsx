@@ -42,7 +42,7 @@ export const ArianaSongs = (props:Props) => {
             <Picker.Item label="NASA" value="nasa" />
          </Picker>
          <FirstLine text={firstLine}/>
-         <GuessingForm hide={guessFormVisibility} />
+         <GuessingForm hide={guessFormVisibility} song={song}/>
         </View>
     )
 }
@@ -79,8 +79,8 @@ export const TaylorSongs = (props:Props) => {
             <Picker.Item label="Bad Blood" value="bad" />
             <Picker.Item label="Enchanted" value="enchanted" />
          </Picker>
-         <FirstLine text={firstLine}/>
-         <GuessingForm hide={guessFormVisibility} />
+         <FirstLine text={firstLine} />
+         <GuessingForm hide={guessFormVisibility} song={song} />
         </View>
     )
 }
