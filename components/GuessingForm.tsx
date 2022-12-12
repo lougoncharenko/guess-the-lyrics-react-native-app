@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import { View, TextInput, Pressable, Text, StyleSheet} from 'react-native';
 
 interface Props {
-    hide: boolean
+    hide: boolean;
+    song: string;
 }
 
 
