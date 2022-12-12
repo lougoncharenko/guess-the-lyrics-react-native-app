@@ -28,7 +28,7 @@ const GuessingForm = (props:Props) => {
   } else if (song === 'enchanted' && guess === taylor.secondLyrics[2]) {
     setResult(correctAnswer);
   } else {
-    setResult(`Whoops try again! ${guess} is not the crrect answer`)
+    setResult(`Whoops try again! ${guess} is not the correct answer`)
   }
   } 
   const handleClick = () => {
