@@ -12,27 +12,28 @@ interface Props {
 const GuessingForm = (props:Props) => {
   const [secondGuess, setSecondGuess] = useState('');
   const [resultsVisibility, setResultsVisibility] = useState<boolean>(false);
-  const [results, setResults] = useState<string>('')
+  const [result, setResult] = useState<string>('')
   const correctAnswer = 'Good job! You guessed the lyrcis correct!'
   const compareGuessToSecondLines = (guess: string, song: string) => {
   if (song === 'side' && guess === ariana.secondLyrics[0]){
-    setResults(correctAnswer);
+    setResult(correctAnswer);
   } else if (song ===  'seven' && guess === ariana.secondLyrics[1] ) {
-    setResults(correctAnswer);
+    setResult(correctAnswer);
   } else if (song === 'nasa' && guess === ariana.secondLyrics[2]) {
-    setResults(correctAnswer);
+    setResult(correctAnswer);
   } else if (song === 'love' && guess === taylor.secondLyrics[0]) {
-    setResults(correctAnswer);
+    setResult(correctAnswer);
   } else if (song === 'bad' && guess === taylor.secondLyrics[1]) {
-    setResults(correctAnswer);
+    setResult(correctAnswer);
   } else if (song === 'enchanted' && guess === taylor.secondLyrics[2]) {
-    setResults(correctAnswer);
+    setResult(correctAnswer);
   } else {
-    setResults(`Whoops try again! ${guess} is not the crrect answer`)
+    setResult(`Whoops try again! ${guess} is not the crrect answer`)
   }
   } 
   const handleClick = () => {
     console.log(secondGuess)
+    compareGuessToSecondLines(secondGuess, props.song)
     setResultsVisibility(true);
   }
   if (props.hide === false) {
@@ -56,7 +57,7 @@ const GuessingForm = (props:Props) => {
                 </Pressable>
             </View>
         </View>
-        <Results hide = {resultsVisibility} guess = {secondGuess} song={props.song} />
+        <Results hide = {resultsVisibility} result = {result} />
     </View>
   );
 }
