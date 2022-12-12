@@ -9,6 +9,9 @@ interface Props {
 
 const GuessingForm = (props:Props) => {
   const [secondGuess, setSecondGuess] = useState('')
+  const handleClick = () => {
+    console.log(secondGuess)
+  }
   if (props.hide === false) {
     return null;
   }
@@ -23,7 +26,9 @@ const GuessingForm = (props:Props) => {
                 value={secondGuess} 
                 placeholder = 'Enter your guess here'
                 />
-                <Pressable style={styles.button}>
+                <Pressable 
+                onPress= {handleClick}
+                style={styles.button}>
                     <Text>Submit</Text>
                 </Pressable>
             </View>
