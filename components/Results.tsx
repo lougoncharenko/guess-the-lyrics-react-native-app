@@ -1,4 +1,4 @@
-import React from 'react'
+import {useState} from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import {ariana, taylor} from './ArtistInformation'
 
@@ -9,9 +9,13 @@ interface Props {
 }
 
 const Results = (props:Props) => {
+  const [results, setResults] = useState<string>('')
   const guess = props.guess
-  const compareGuessToSecondLines = (guess: string) => {
-
+  const song = props.song
+  const correctAnswer = 'Good job! You guessed the lyrcis correct!'
+  const compareGuessToSecondLines = (guess: string, song: string) => {
+    if ((song) === 'side' && guess === ariana.secondLyrics[0]) 
+        setResults(correctAnswer)
   }
   if (props.hide === false) {
         return null;
