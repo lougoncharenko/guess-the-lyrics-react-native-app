@@ -36,7 +36,7 @@ const GuessingForm = (props:Props) => {
                 </Pressable>
             </View>
         </View>
-        <Results hide = {setResultsVisibility} results = {secondGuess} />
+        <Results hide = {resultsVisibility} results = {secondGuess} />
     </View>
   );
 }
